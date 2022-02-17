@@ -28,16 +28,18 @@ credit.textContent = `Created by ${yourName}`
 // TODO: Hook up event listeners for the rest of the buttons
 
 const gbaddBtn = document.querySelector('#add-gb');
+const gbminusBtn = document.querySelector("#minus-gb");
 let gbQty = document.querySelector('#qty-gb');
 let total = document.querySelector("#qty-total")
 
-const
 
 const ccaddBtn = document.querySelector('#add-cc');
+const ccminusBtn = document.querySelector("#minus-cc")
 let ccQty = document.querySelector('#qty-cc');
 
 
 const sugaraddBtn = document.querySelector('#add-sugar');
+const sugarminusBtn = document.querySelector("#minus-sugar");
 let sugarQty = document.querySelector('#qty-sugar');
 
 
@@ -61,3 +63,23 @@ sugaraddBtn.addEventListener('click', () =>{
     sugarQty.textContent = sugar
     total.textContent = sugar + gb + cc;
 });
+
+gbminusBtn.addEventListener('click', () =>{
+    console.log(gb)
+    gb =gb -1;
+    gbQty.textContent = gb;
+    total.textContent = gb + cc + sugar;
+});
+ccminusBtn.addEventListener('click', () =>{
+    console.log(cc)
+    cc =cc -1;
+    ccQty.textContent = cc
+    total.textContent = cc + gb + sugar;
+});
+sugarminusBtn.addEventListener('click', () =>{
+    console.log(sugar)
+    sugar =sugar -1;
+    sugarQty.textContent = sugar
+    total.textContent = sugar + gb + cc;
+});
+
